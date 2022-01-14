@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&family=Prata&family=Prompt:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.logo img{
+    border: 2px solid hotpink;
+    border-radius: 50%;
+}
+.highlight{
+    color: rgb(252, 23, 164);
+}
+.primary-button{
+    outline: 0;
+    border: 0;
+    padding: 15px 20px;background-image: linear-gradient(90deg, hsl(327, 98%, 58%),red);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 7px 0 rgb(196, 13, 104);
+    position: relative;
+    top: 0;
+}
+.primary-button:active{
+    top: 5px;
+    box-shadow: 0 2px 0 rgb(196, 13, 104);
+}
+header{
+    
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(121, 106, 106);
+    background-blend-mode: overlay;
+}
+/* height chara align-item hobena */
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.navigation{
+    display: flex;
+}
+.navigation li{
+    list-style: none;
+    margin: 10px;
+}
+.navigation li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+.banner{
+    height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.banner-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.banner-left h1{
+    color: yellowgreen;
+    font-size: 50PX;
+}
+.banner-left p{
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 20px;
+}
+.banner-right{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.banner-right img{
+    width: 60%;
+    border: 5px solid rgb(230, 50, 176);
+    border-radius: 15px;
+    
+}
+.section-tittle{
+    text-align: center;
+}
+.section-tittle h2{
+    font-size: 40px;
+    display: inline-block;
+    border-bottom: 2px solid rgb(245, 60, 189);
+    margin: 50px 0;
+    text-transform: uppercase;
+}
+.feature{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+.card{
+    width: 300px;
+    padding: 30px;
+    box-shadow: 0 30px 35px gray ;
+    margin: 0 auto;
+    border-radius: 15px;
+
+}
+#card-icon{
+    background-color: hotpink;
+    color: white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+
+}
+.card h3{
+    color: hotpink;
+    font-size: 25px;
+}
+.card p{
+    margin: 10px 0;
+    line-height: 1.5;
+
+}
+.card a{
+    color: hotpink;
+    text-decoration: none;
+}
+.gallery{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.photo img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid hotpink;
+}
+.contact{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+.contact-left img{
+    width: 80%;
+    border-radius: 15px;
+}
+.contact-right form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-field{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid hotpink;
+}
+footer{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+/* navbar */
+#nav-toggler{
+    display: none;
+}
+.nav-toggler-icon{
+    display: none;
+    color: white;
+    font-size: 30px;
+}
+
+
+
+/* media quary */
+
+@media (max-width:950px) {
+    .gallary{
+        grid-template-columns: 1fr 1fr;
+    }
+    .banner-left h1{
+        font-size: 35px;
+    }
+}
+
+@media (max-width:800px) {
+    .banner{
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+    .banner-left{
+        order: 2;
+    }
+    .feature ,
+    .gallery,
+    .contact{
+        grid-template-columns: 1fr;
+    }
+    .photo{
+        text-align: center;
+    }
+    .photo img{
+        max-width: 350px;
+    }
+    .nav-toggler-icon{
+        display: block;
+    }
+    .navigation{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding: 20px 0;
+        transform: translateY(-330px);
+        transition: .7s ease-in-out;
+    }
+    .navigation li a{
+        color: black;
+    }
+    #nav-toggler:checked ~ .navigation{
+        transform: translateY(0);
+    }
+}
